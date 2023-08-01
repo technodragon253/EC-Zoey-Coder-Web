@@ -11,7 +11,7 @@ const leftRegxExpression = /(extraZoeyLeft)/;
 const rightRegxExpression = /(extraZoeyRight)/;
 const normalRegxExpression = /(extraZoey)/;
 function encode() {
-    let outputArray = [];
+    let output = "";
     let binaryString = "";
     for (let i = 0; i < encodeInput.innerHTML.length; i++) {
         binaryString += encodeInput.innerHTML[i].charCodeAt(0).toString(2).padStart(8, '0');
@@ -21,31 +21,20 @@ function encode() {
     if (binaryArray === null) {
         return;
     }
-    let chunkIndex = 0;
-    outputArray[chunkIndex] = "";
     for (let i = 0; i < binaryArray.length; i++) {
-        if (outputArray[chunkIndex].length + 16 > 2000) {
-            chunkIndex += 1;
-            outputArray[chunkIndex] = "";
-        }
         if (binaryArray[i] == "00") {
-            outputArray[chunkIndex] += createEmojiImages(":extraZoeyUp:");
+            output += createEmojiImages(":extraZoeyUp:");
         }
         else if (binaryArray[i] == "01") {
-            outputArray[chunkIndex] += createEmojiImages(":extraZoeyLeft:");
+            output += createEmojiImages(":extraZoeyLeft:");
         }
         else if (binaryArray[i] == "10") {
-            outputArray[chunkIndex] += createEmojiImages(":extraZoeyRight:");
+            output += createEmojiImages(":extraZoeyRight:");
         }
         else if (binaryArray[i] == "11") {
-            outputArray[chunkIndex] += createEmojiImages(":extraZoey:");
+            output += createEmojiImages(":extraZoey:");
         }
     }
-    console.log(outputArray);
-    let output = "";
-    outputArray.forEach(element => {
-        output += '<div class="text-output-segment">' + element + '</div>';
-    });
     encodeOutput.innerHTML = output;
 }
 function findTextEmojis(input) {

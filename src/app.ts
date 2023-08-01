@@ -15,7 +15,7 @@ const rightRegxExpression: RegExp = /(extraZoeyRight)/;
 const normalRegxExpression: RegExp = /(extraZoey)/;
 
 function encode() {
-    let outputArray: string[] = [];
+    let output: string = "";
     let binaryString: string = "";
 
     for (let i = 0; i < encodeInput.innerHTML.length; i++) {
@@ -27,34 +27,22 @@ function encode() {
     if (binaryArray === null) {
         return;
     }
-    let chunkIndex = 0;
-    outputArray[chunkIndex] = "";
 
     for (let i = 0; i < binaryArray.length; i++) {
-        if (outputArray[chunkIndex].length + 16 > 2000) {
-            chunkIndex += 1;
-            outputArray[chunkIndex] = "";
-        }
-
         if (binaryArray[i] == "00") {
-            outputArray[chunkIndex] += createEmojiImages(":extraZoeyUp:");
+            output += createEmojiImages(":extraZoeyUp:");
         }
         else if (binaryArray[i] == "01") {
-            outputArray[chunkIndex] += createEmojiImages(":extraZoeyLeft:");
+            output += createEmojiImages(":extraZoeyLeft:");
         }
         else if (binaryArray[i] == "10") {
-            outputArray[chunkIndex] += createEmojiImages(":extraZoeyRight:");
+            output += createEmojiImages(":extraZoeyRight:");
         }
         else if (binaryArray[i] == "11") {
-            outputArray[chunkIndex] += createEmojiImages(":extraZoey:");
+            output += createEmojiImages(":extraZoey:");
         }
     }
 
-    console.log(outputArray);
-    let output: string = "";
-    outputArray.forEach(element => {
-        output += '<div class="text-output-segment">' + element + '</div>'
-    });
     encodeOutput.innerHTML = output;
 }
 function findTextEmojis(input:string) {

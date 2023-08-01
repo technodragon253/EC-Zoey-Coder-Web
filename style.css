@@ -72,24 +72,6 @@ button {
     margin-top: .5rem;
     font-size: 1.4rem;
 }
-.text-output-wrapper {
-    width: 30vw + 5px;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-}
-.text-output-segment {
-    width: 30vw;
-    height: inherit;
-    border: 5px solid #ffffff;
-    border-radius: 5px;
-    background-color: #ffffff;
-    color: #000000;
-    overflow-y: auto;
-    overflow-wrap: anywhere;
-    font-size: 1.5rem;
-    margin-top: .5rem;
-}
 .text-output {
     width: 30vw;
     height: 30vh;
