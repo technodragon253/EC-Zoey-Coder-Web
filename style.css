@@ -1,0 +1,108 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Arimo', sans-serif;
+}
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.main-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.header {
+    text-align: center;
+    display: inline-block;
+    color: #000000;
+    background: linear-gradient(
+        to right,
+        #d127f4 0%,
+        #d127f4 50%,
+        #aae962 50%,
+        #aae962 100%
+    );
+    font-size: 3rem;
+    padding: .5rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.encode-box {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    background-color: #d127f4;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.decode-box {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    background-color: #aae962;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.sub-header {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+.text-input {
+    width: 30vw;
+    height: 30vh;
+    border: 5px solid #ffffff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    overflow-y: auto;
+    font-size: 1.5rem;
+    margin-top: .5rem;
+}
+button {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-radius: 5px;
+    color: #000000;
+    margin-top: .5rem;
+    font-size: 1.4rem;
+}
+.text-output-wrapper {
+    width: 30vw + 5px;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+}
+.text-output-segment {
+    width: 30vw;
+    height: inherit;
+    border: 5px solid #ffffff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    font-size: 1.5rem;
+    margin-top: .5rem;
+}
+.text-output {
+    width: 30vw;
+    height: 30vh;
+    border: 5px solid #ffffff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    font-size: 1.5rem;
+    margin-top: .5rem;
+}
+.emoji {
+    width: 1.5rem;
+    height: 1.5rem;
+}

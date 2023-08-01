@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="Zoey.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Zoey Encoder Decoder</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">Extra Credits Zoey Encoder/Decoder</div>
+      <div class="main-box">
+        <div class="encode-box">
+          <div class="sub-header">Encoder</div>
+          <div contenteditable="true" id="encode-input" class="text-input"></div>
+          <button id="encode-button" onclick="encode()">Encode!</button>
+          <div id="encode-output" class="text-output-wrapper">
+            <div class="text-output-segment"></div>
+          </div>
+          <button id="encode-copy-button" onclick="copyEncodedOutput(self)">Copy</button>
+        </div>
+        <div class="decode-box">
+          <div class="sub-header">Decoder</div>
+          <div contenteditable="true" id="decode-input" class="text-input"></div>
+          <button id="decode-button" onclick="decode()">Decode!</button>
+          <div id="decode-output" class="text-output"></div>
+          <button id="decode-copy-button" onclick="copyDecodedOutput(self)">Copy</button>
+        </div>
+      </div>
+      <div id="app"></div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
