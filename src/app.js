@@ -5,10 +5,10 @@ const encodeOutput = document.getElementById("encode-output");
 const decodeOutput = document.getElementById("decode-output");
 const encodeCopyButton = document.getElementById("encode-copy-button");
 const decodeCopyButton = document.getElementById("decode-copy-button");
-const encodeRegxExpression = /(?<!img aria-label=")(\:extraZoey(?:Up|Left|Right|)\:)/g;
-const upRegxExpression = /(extraZoeyUp)/;
-const leftRegxExpression = /(extraZoeyLeft)/;
-const rightRegxExpression = /(extraZoeyRight)/;
+const encodeRegxExpression = /(?<!img aria-label=")(\:(?:eZ(?:u|l|r)|extraZoey)\:)/g;
+const upRegxExpression = /(eZu)/;
+const leftRegxExpression = /(eZl)/;
+const rightRegxExpression = /(eZr)/;
 const normalRegxExpression = /(extraZoey)/;
 function encode() {
     let output = "";
@@ -23,13 +23,13 @@ function encode() {
     }
     for (let i = 0; i < binaryArray.length; i++) {
         if (binaryArray[i] == "00") {
-            output += createEmojiImages(":extraZoeyUp:");
+            output += createEmojiImages(":eZu:");
         }
         else if (binaryArray[i] == "01") {
-            output += createEmojiImages(":extraZoeyLeft:");
+            output += createEmojiImages(":eZl:");
         }
         else if (binaryArray[i] == "10") {
-            output += createEmojiImages(":extraZoeyRight:");
+            output += createEmojiImages(":eZr:");
         }
         else if (binaryArray[i] == "11") {
             output += createEmojiImages(":extraZoey:");
@@ -62,13 +62,13 @@ function decode() {
     emojiArray = findTextEmojis(decodeInput.innerHTML);
     // Old encoding is being deprecated, so this is the new encoding style.
     emojiArray.forEach(emoji => {
-        if (emoji == ":extraZoeyUp:") {
+        if (emoji == ":eZu:") {
             binaryString += "00";
         }
-        else if (emoji == ":extraZoeyLeft:") {
+        else if (emoji == ":eZl:") {
             binaryString += "01";
         }
-        else if (emoji == ":extraZoeyRight:") {
+        else if (emoji == ":eZr:") {
             binaryString += "10";
         }
         else if (emoji == ":extraZoey:") {
@@ -87,14 +87,14 @@ function decode() {
 function createEmojiImages(text) {
     let output = new Array;
     findTextEmojis(text).forEach((emoji) => {
-        if (emoji == ":extraZoeyUp:") {
-            output.push('<img alt=":extraZoeyUp:" src="ZoeyUp.webp" class="emoji">');
+        if (emoji == ":eZu:") {
+            output.push('<img alt=":eZu:" src="ZoeyUp.webp" class="emoji">');
         }
-        else if (emoji == ":extraZoeyLeft:") {
-            output.push('<img alt=":extraZoeyLeft:" src="ZoeyLeft.webp" class="emoji">');
+        else if (emoji == ":eZl:") {
+            output.push('<img alt=":eZl:" src="ZoeyLeft.webp" class="emoji">');
         }
-        else if (emoji == ":extraZoeyRight:") {
-            output.push('<img alt=":extraZoeyRight:" src="ZoeyRight.webp" class="emoji">');
+        else if (emoji == ":eZr:") {
+            output.push('<img alt=":eZr:" src="ZoeyRight.webp" class="emoji">');
         }
         else if (emoji == ":extraZoey:") {
             output.push('<img alt=":extraZoey:" src="Zoey.webp" class="emoji">');
